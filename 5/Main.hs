@@ -22,12 +22,12 @@ react s =
      else react s'
 
 reactOnce :: Polymer -> Polymer
-reactOnce (x:x':xs) | sameTypeOppositePolatiry x x' = reactOnce xs
+reactOnce (x:x':xs) | sameTypeOppositePolarity x x' = reactOnce xs
                     | otherwise                     = x : reactOnce (x':xs)
 reactOnce xs = xs
 
-sameTypeOppositePolatiry :: Unit -> Unit -> Bool
-sameTypeOppositePolatiry c1 c2 = abs (c1 - c2) == 32 -- toLower c1 == toLower c2 && c1 /= c2
+sameTypeOppositePolarity :: Unit -> Unit -> Bool
+sameTypeOppositePolarity c1 c2 = abs (c1 - c2) == 32 -- toLower c1 == toLower c2 && c1 /= c2
 
 removeUnit :: Unit -> Polymer -> Polymer
 removeUnit u = filter (\u' -> u' /= u && u' /= u+32)
