@@ -1,5 +1,5 @@
 #!/usr/bin/env stack
--- stack --resolver lts-12.21 script --package split --package time --package safe --package containers
+-- stack --resolver lts-12.21 script --package split,time,safe,containers
 module Main where
 
 import Control.Arrow ((&&&), (***))
